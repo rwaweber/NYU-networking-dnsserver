@@ -30,12 +30,12 @@ def generate_aes_key(password, salt):
     key = base64.urlsafe_b64encode(key)
     return key
 
-# Lookup details on fernet in the cryptography.io documentation    
+# Lookup details on fernet in the cryptography.io documentation
 def encrypt_with_aes(input_string, password, salt):
     key = generate_aes_key(????)
     f = Fernet(???)
     encrypted_data = f.????(????.encode('utf-8')) #call the Fernet encrypt method
-    return encrypted_data    
+    return encrypted_data
 
 def decrypt_with_aes(encrypted_data, password, salt):
     key = generate_aes_key(????)
@@ -50,7 +50,7 @@ input_string = ?????
 encrypted_value = encrypt_with_aes(input_string, password, salt) # exfil function
 decrypted_value = decrypt_with_aes(encrypted_value, password, salt)  # exfil function
 
-# For future use    
+# For future use
 def generate_sha256_hash(input_string):
     sha256_hash = hashlib.sha256()
     sha256_hash.update(input_string.encode('utf-8'))
@@ -75,7 +75,6 @@ dns_records = {
             86400, #minimum
         ),
     },
-   
     # Add more records as needed (see assignment instructions!
 }
 
