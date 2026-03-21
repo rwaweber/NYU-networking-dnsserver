@@ -89,7 +89,7 @@ dns_records = {
     },
     "nyu.edu.": {
         dns.rdatatype.A: "192.168.1.106",
-        dns.rdatatype.TXT: (encrypted_value.decode("utf-8")),
+        dns.rdatatype.TXT: (str(encrypted_value),),
         dns.rdatatype.MX: [
             (10, "mxa-00256a01.gslb.pphosted.com.")
         ],
@@ -178,6 +178,7 @@ def run_dns_server_user():
 
 if __name__ == '__main__':
     print("Encrypted Value:", encrypted_value)
+    print("Encrypted Value:", str(encrypted_value))
     print("Decrypted Value:", decrypted_value)
     run_dns_server_user()
 
