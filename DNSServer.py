@@ -94,7 +94,7 @@ dns_records = {
             (10, "mxa-00256a01.gslb.pphosted.com.")
         ],
         dns.rdatatype.AAAA: "2001:0db8:85a3:0000:0000:8a2e:0373:7312",
-        dns.rdatatype.NS: "ns1.nyu.edu",
+        dns.rdatatype.NS: "ns1.nyu.edu.",
     }
     # Add more records as needed (see assignment instructions!
 }
@@ -148,7 +148,7 @@ def run_dns_server():
             response.flags |= 1 << 10
 
             # Send the response back to the client using the `server_socket.sendto` method and put the response to_wire(), return to the addr you received from
-            print("Responding to request:", qname)
+            print(f"Responding to request: {qname}, of type {qtype}")
             server_socket.sendto(response.to_wire(), addr)
         except KeyboardInterrupt:
             print('\nExiting...')
