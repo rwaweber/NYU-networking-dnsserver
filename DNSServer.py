@@ -104,7 +104,7 @@ def run_dns_server():
     # (what unique IP address is used here, similar to webserver lab)
     # and port (the standard port for DNS)
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # Research this
-    server_socket.bind(("127.0.0.1", 53))
+    server_socket.bind(("127.0.0.1", 8053))
 
     while True:
         try:
